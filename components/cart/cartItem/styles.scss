@@ -1,0 +1,46 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.cart-item {
+  @include display-flex(center, flex-start);
+  padding: 1.5rem;
+  color: $color-subtitle;
+
+  &__main {
+    @include display-flex(center);
+    flex-direction: column;
+    width: 100%;
+
+    &-title {
+      width: 100%;
+      @include display-flex(space-between, baseline);
+ 
+      &--text {
+        text-transform: capitalize;
+        text-align: justify;
+        margin: 0;
+      }
+    }
+
+    &-content {
+      @include display-flex(space-between, center);
+      font-size: 14px;
+      width: 100%;
+
+      &-price {
+        text-align: justify;
+
+        & > p {
+          &::before {
+            content: '$ ';
+          }
+        }
+
+        &--through {
+          color: $color-span;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

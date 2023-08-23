@@ -4,6 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import CartItem from '../cartItem';
 import { showWithPoints } from '@/utils/numbers';
 import wordings from '@/wordings';
+import './styles.scss';
 
 const CartCollapse = () => {
   const { cart } = useContext(CartContext);
@@ -34,11 +35,10 @@ const CartCollapse = () => {
       </button>
       <div
         id="navbarCollapse"
-        className="collapse collapse-horizontal bg-body position-fixed top-0 end-0 z-3"
-        style={{ height: "100vh" }}
+        className="collapse collapse-horizontal"
       >
-        <div style={{ width: "400px", height: "100vh"}} className="position-relative sticky-bottom p-4 bg-body top-0">
-          <div className="sticky-top p-4 bg-body">
+        <div className="cart">
+          <div className="cart__header">
             <button
               className="btn-close"
               aria-expanded="false"
@@ -46,33 +46,33 @@ const CartCollapse = () => {
               data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse"
             ></button>
-            <h3 className="text-center p-0 m-0">{navbar.cart}</h3>            
+            <h3 className="cart__header-title">{navbar.cart}</h3>            
           </div>
-          <div className="overflow-y-scroll" style={{ height: "60%" }}>
+          <div className="cart__main">
             { 
               Object.values(cart).map(item => ( <CartItem {...item} key={item.id} /> ))
             }
           </div>
-          <div className="sticky-bottom p-4 bg-body">
+          <div className="cart__footer">
             {
               hasDiscount && (
                 <>
-                  <div className="d-flex justify-content-between">
+                  <div className="cart__footer-price">
                     <p>{subtotal}</p>
                     <p>${showWithPoints(calculateOriginalPrice)}</p>
                   </div>
-                  <div className="d-flex justify-content-between">
+                  <div className="cart__footer-price">
                     <p>{discount}</p>
                     <p>- ${showWithPoints(calculateDiscountTotal)}</p>
                   </div>
                 </>
               )
             }
-            <div className="d-flex justify-content-between">
+            <div className="cart__footer-price">
               <p>{total}</p>
-              <p data-testid="final-price">${showWithPoints(calculateTotalPrice)}</p>
+              <p data-testid="cart__footer-price">${showWithPoints(calculateTotalPrice)}</p>
             </div>
-            <button className="btn bg-info text-light text-uppercase w-100">{finishOrder}</button>
+            <button className="cart__footer-btn">{finishOrder}</button>
           </div>
         </div>
       </div>

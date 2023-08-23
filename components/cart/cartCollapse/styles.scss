@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+#navbarCollapse {
+  height: 100vh;
+  background: $bg-body;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cart {
+    width: 400px;
+    height: 100vh;
+    position: sticky;
+    padding: 1.5rem;
+    top: 0;
+    bottom: 0;
+
+    &__header {
+      position: sticky;
+      top: 0;
+      padding: 1.5rem;
+
+      &-title {
+        color: $color-title;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &__main {
+      height: 60%;
+      overflow-y: scroll;
+    }
+
+    &__footer {
+      color: $color-title;
+      position: sticky;
+      bottom: 0;
+      padding: 1.5rem;
+
+      &-price {
+        @include display-flex(space-between);
+      }
+
+      &-btn {
+        background: $brand-main;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        padding: 10px 0;
+        @include text(20px, light, normal, $white);
+      }
+    }
+  }
+}
