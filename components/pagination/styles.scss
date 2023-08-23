@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.page-link ~ .active-link {
+  background: $brand-main;
+  color: $white;
+}
+
+.page-link {
+  color: $brand-main;
+}

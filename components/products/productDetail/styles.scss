@@ -1,0 +1,111 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/breakpoints';
+
+.product-detail {
+  margin: 10% 0;
+  @include display-flex(center);
+
+  &-content {
+    width: 100%;
+
+    &__data {
+      width: 100%;
+      margin-top: 1rem;
+      @include display-flex(center);
+      flex-direction: column;
+  
+      &-title {
+        text-transform: lowercase;
+        text-align: center;
+        @include text(2.5rem, 600, normal, $color-title);
+      }
+  
+      &-btn-cart {
+        background: $brand-main;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px 0;
+        @include text(1rem, normal, normal, $white);
+      }
+  
+      &-units {
+        width: 80%;
+        margin-bottom: 4rem;
+        
+        &-input {
+          width: 100%;
+          @include display-flex(space-between, baseline);
+        }
+      }
+  
+      &-discount {
+        @include display-flex(left, flex-start);
+  
+        &-price {
+          margin-right: 10px;
+          margin-top: 10px;
+          @include text(1.5rem, 800, normal, $brand-main);
+        }
+  
+        &-price--through {
+          @include text(1rem, 400, normal, $color-subtitle);
+          text-decoration: line-through;
+          margin-right: 10px;
+        }
+  
+        &-percentage {
+          background: $brand-main;
+          @include text(1rem, 400, normal, $white);
+          padding: 13px;
+  
+          &::after {
+            content: ' %';
+          }
+        }
+  
+      }
+  
+      &-discount-price,
+      &-discount-price--through,
+      &-price {
+        &::before {
+          content: '$ ';
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    &-conetent {
+      &__carousel {
+        width: 60%;
+      }
+
+      &__data-units {
+        width: 60%;
+      }
+    }
+  
+  }
+
+  @include desktop {
+    &-content {
+      @include display-flex(space-between);
+
+      &__carousel {
+        width: 50%;
+      }
+
+      &__data {
+        width: 40%;
+        margin-top: 0;
+  
+        &-units {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

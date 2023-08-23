@@ -5,6 +5,7 @@ import { CartContext } from '@/context/cart';
 import { roundToTwoDecimals, showWithPoints } from '@/utils/numbers';
 import wordings from '@/wordings';
 import { ProductDetailProps } from '@/interfaces/components/products/productDetail';
+import './styles.scss';
 
 const ProductDatil = (props: ProductDetailProps) => {
   const { addProductToCart } = useContext(CartContext);
@@ -42,40 +43,40 @@ const ProductDatil = (props: ProductDetailProps) => {
   };
 
   return (
-    <div className="d-flex justify-content-center p-5">
-      <div className="d-flex w-75">
-        <div className="w-50 me-4">
+    <div className="product-detail">
+      <div className="product-detail-content">
+        <div className="product-detail-content__carousel">
           <Carousel pictures={pictures} />
         </div>
-        <div className="w-50">
+        <div className="product-detail-content__data">
           <div className="ps-4 fw-bold">
-            <h1 className="text-center text-dark-emphasis">{title}</h1>
+            <h1 className="product-detail-content__data-title">{title}</h1>
             <div className="text-start mt-4">
               {
                 originalPrice ? (
-                  <div className="d-flex justify-content-start align-items-center">
-                    <p className="text-secondary text-decoration-line-through fw-lighter fs-6 me-2">${showWithPoints(originalPrice)}</p>
-                    <p className="text-info fs-3 me-3">${showWithPoints(price)}</p>
-                    <p className="text-white bg-info p-2">{calcultePercentageDiscount(originalPrice, price)}%</p>
+                  <div className="product-detail-content__data-discount">
+                    <p className="product-detail-content__data-discount-price--through">{showWithPoints(originalPrice)}</p>
+                    <p className="product-detail-content__data-discount-price">{showWithPoints(price)}</p>
+                    <p className="product-detail-content__data-discount-percentage">{calcultePercentageDiscount(originalPrice, price)}</p>
                   </div>
                 )
-                : <p className="fs-2 text-secondary-emphasis">${showWithPoints(price)}</p>
+                : <p className="product-detail-content__data-price">{showWithPoints(price)}</p>
               }
             </div>
             <div>
               {
                 availableQuantity ? (
                   <>
-                    <div className="w-50 mt-4 mb-5">
+                    <div className="product-detail-content__data-units">
                       <p className="fw-normal">{quantity}</p>
-                      <div className="d-flex justify-content-between align-items-center w-100">
+                      <div className="product-detail-content__data-units-input">
                         <button className="btn bg-dark-subtle rounded-circle" onClick={substraCountItem}>-</button>
                         <input type="number" className="form-control w-25" value={countItem} readOnly />
                         <button className="btn bg-dark-subtle rounded-circle" onClick={addCountItem}>+</button>
                         <p className="text-body-tertiary fw-light">{availableQuantity} {available}</p>
                       </div>
                     </div>
-                    <button className="btn btn-secondary mt-2 w-100" onClick={addItemCart}>
+                    <button className="product-detail-content__data-btn-cart" onClick={addItemCart}>
                       <FiShoppingCart /> {addButtom}
                     </button>
                   </>

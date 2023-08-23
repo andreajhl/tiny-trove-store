@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.card-category {
+  position: relative;
+
+  &__title {
+    background: $bg-body-secondary;
+    padding: 1.5rem;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    color: $white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  }
+}

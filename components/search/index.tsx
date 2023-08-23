@@ -4,6 +4,7 @@ import { normalizeText } from '@/utils/strings';
 import wordings from '@/wordings';
 import { useRouter } from 'next/router';
 import { useDebounce } from '@/hooks/useDebounce';
+import './styles.scss';
 
 const INTERVAL_TIME = 1000;
 

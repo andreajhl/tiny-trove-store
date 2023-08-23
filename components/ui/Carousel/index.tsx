@@ -3,9 +3,10 @@ import Image from 'next/image';
 import { MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
 import { CarouselProps } from '@/interfaces/components/ui/carousel';
 import classNames from 'classnames';
+import './styles.scss';
 
 const Carousel = ({ pictures }: CarouselProps) => (
-  <div id="carouselIndicators" className="carousel slide">
+  <div id="carouselIndicators" className="carousel slide carousel-fade">
     <div className="carousel-indicators">
       {
         pictures.map((_, index: number) => (
@@ -24,7 +25,7 @@ const Carousel = ({ pictures }: CarouselProps) => (
       {
         pictures.map((pic: Record<string, string>, index: number) => (
           <div className={classNames('carousel-item', { 'active': !index })} data-testid="carousel-item" key={index}>
-            <Image src={pic.url} width={500} height={500} className="d-block w-100" alt={pic.title} />
+            <Image src={pic.url} width={300} height={300} className="d-block w-100" alt={pic.title} />
           </div>
         ))
       }

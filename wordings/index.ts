@@ -22,7 +22,7 @@ export default ({
     finishOrder: 'Finalizar pedido'
   },
   product: {
-    quantity: 'Cantidad',
+    quantity: 'Cantidad:',
     available: 'disponibles',
     addButtom: 'Agregar',
     outOfStock: 'No hay stock disponible',

@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.banner {
+  @include display-flex(center);
+
+  &-categories {
+    max-width: 80%;
+    margin: 4rem 0;
+    @include display-flex(center, center, wrap);
+  }
+}

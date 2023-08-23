@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { calculateInitialPage } from "./utils";
 import { MAX_ITEMS_PAGINATION } from "@/constants/pagination";
 import { PaginationProps } from "@/interfaces/components/pagination";
+import './styles.scss';
 
 const Pagination = ({ totalPage }: PaginationProps) => {
   const router = useRouter();
@@ -70,7 +71,7 @@ const Pagination = ({ totalPage }: PaginationProps) => {
             <li
               key={pageNumber}
               onClick={() => setCurrentPage(pageNumber)}
-              className={classNames("page-item page-link", { "active": currentPage === pageNumber })}
+              className={classNames("page-item page-link", { "active-link": currentPage === pageNumber })}
             >
               {pageNumber + 1}
             </li>
