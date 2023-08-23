@@ -1,0 +1,43 @@
+export const CART = {
+  "MLA1173303642": {
+    id: "MLA1173303642",
+    title: "Trapitos De Apego Bebe Mickey Y Sus Amigos Phi Phi Toys",
+    thumbnail: "http://http2.mlstatic.com/D_701543-MLA51631595234_092022-I.jpg",
+    price: 3915,
+    availableQuantity: 17,
+    quantity: 1,
+  },
+  "MLA1143744131": {
+    id: "MLA1143744131",
+    title: "Trapito De Apego Animales Mantas Apego Para Bebes 28cm Mca",
+    thumbnail: "http://http2.mlstatic.com/D_695741-MLA50421130821_062022-I.jpg",
+    price: 9795,
+    originalPrice: 10500,
+    availableQuantity: 1,
+    quantity: 1,
+  },
+  "MLA1139367735": {
+    id: "MLA1139367735",
+    title: "Trapito De Apego 36 Cm 3 Modelos Ploppy 390089",
+    thumbnail: "http://http2.mlstatic.com/D_776846-MLA50120311097_052022-I.jpg",
+    price: 6940,
+    availableQuantity: 5,
+    quantity: 2,
+  },
+  "MLA861959578": {
+    id: "MLA861959578",
+    title: "Peluche Animales Con Manta En Caja 20 Cm",
+    thumbnail: "http://http2.mlstatic.com/D_676431-MLA70679207383_072023-I.jpg",
+    price: 13300,
+    availableQuantity: 121,
+    quantity: 1,
+  },
+  "MLA1470626862": {
+    id: "MLA1470626862",
+    title: "Peluche Pie Y Mano Sonajero 20cm- Orig. Phi Phi Toys ",
+    thumbnail: "http://http2.mlstatic.com/D_634590-MLU70953160216_082023-I.jpg",
+    price: 4600,
+    availableQuantity: 19,
+    quantity: 3,
+  },
+};
