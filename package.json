@@ -11,6 +11,7 @@
     "deploy": "npm run build && npm run start"
   },
   "dependencies": {
+    "@netlify/next": "^1.4.9",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
