@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Search from '../../search';
 import CartCollapse from '@/components/cart/cartCollapse';
+import Image from 'next/image';
 
 const NavBar = () => (
-  <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <nav className="navbar navbar-expand-lg bg-body-tertiary pe-5 ps-5">
     <div className="container-fluid">
-      <Link className="navbar-brand w-25" href="/">LOGO</Link>
+      <Link className="navbar-brand w-25" href="/">
+        <Image src="/images/home/logo.jpeg" alt="logo" width={200} height={90} />
+      </Link>
       <button
         className="navbar-toggler"
         data-bs-toggle="collapse"

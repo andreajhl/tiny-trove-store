@@ -13,15 +13,10 @@ const ShopLayout = ({ children, title, pageDescription, imageFullUrl }: ShopLayo
       <meta name="og:description" content={pageDescription} />
       { imageFullUrl && <meta name="og:image" content={imageFullUrl} /> }
     </Head>
-    <nav>
-      <NavBar />
-    </nav>
-    <main>
+    <NavBar />
+    <main className="container">
       {children}
     </main>
-    <footer>
-
-    </footer>
   </>
 );
 

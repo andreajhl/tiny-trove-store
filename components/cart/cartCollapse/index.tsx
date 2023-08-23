@@ -23,7 +23,7 @@ const CartCollapse = () => {
   return (
     <>
       <button
-        className="btn"
+        className="btn fs-4"
         data-testid="btn-cart-collapse" 
         aria-expanded="false"
         data-bs-toggle="collapse"
