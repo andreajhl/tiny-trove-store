@@ -1,5 +1,10 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
-.btn {
-  color: $brand-main;
+.form-control {
+  @include display-flex(space-around);
+  
+  .btn {
+    color: $brand-main;
+  }
 }

@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/breakpoints';
+
+.navbar {
+  &-brand {
+    margin-right: 10%;
+  }
+
+  .brand {
+    width: 140px !important;
+    height: 60px !important;
+  }
+
+  &-cart {
+    @include display-flex(right);
+  }
+
+  @include tablet {
+
+    .collapse {
+      justify-content: space-between;
+    }
+  
+    .brand {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+
+  @include desktop {
+    &-search {
+      width: 50%;
+    }
+
+    &-cart {
+      @include display-flex(right);
+    }
+  }
+}

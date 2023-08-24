@@ -41,7 +41,7 @@ const Search = () => {
       <form
         role="search"
         onSubmit={handleSubmit}
-        className="form-control d-flex justify-content-around"
+        className="form-control"
       >
         <input
           type="search"
