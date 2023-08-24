@@ -50,6 +50,10 @@ export default ({
     }
   },
   warnings: {
-    createOrden: 'Error no controlado, hable con el administrador'
+    createOrden: 'Error no controlado, hable con el administrador',
+    pageNotFound: {
+      title: 'Oops!',
+      subtitle: 'No encontramos la página'
+    }
   } 
 })
