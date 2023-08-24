@@ -21,12 +21,8 @@ const NavBar = () => (
         <span className="navbar-toggler-icon"></span>
       </button>
     <div className="collapse navbar-collapse" id="navbar">
-      <div className="navbar-search">
-        <Search />
-      </div>
-      <div className="navbar-cart">
-        <CartCollapse />
-      </div>
+      <Search />
+      <div className="navbar-cart"><CartCollapse /></div>
     </div>
     </div>
   </nav>

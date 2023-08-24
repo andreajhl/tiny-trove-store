@@ -37,11 +37,11 @@ const Search = () => {
   };
 
   return (
-    <div className='w-100'>
+    <div className="search">
       <form
         role="search"
         onSubmit={handleSubmit}
-        className="form-control"
+        className="search-form-control form-control"
       >
         <input
           type="search"

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { useRouter } from 'next/router';
-import NavBar from '.';
 import { CartProvider } from '@/context/cart';
+import NavBar from '.';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn()

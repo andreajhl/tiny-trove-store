@@ -1,10 +1,15 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.form-control {
-  @include display-flex(space-around);
-  
-  .btn {
-    color: $brand-main;
+.search {
+  width: 70%;
+  max-width: 600px;
+
+  &-form-control {
+    @include display-flex(space-around);
+    
+    .btn {
+      color: $brand-main;
+    }
   }
 }
