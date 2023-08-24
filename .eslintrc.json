@@ -1,3 +1,37 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "camelcase": 0,
+    "security/detect-object-injection": 0,
+    "no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "react-hooks/exhaustive-deps": 0
+  },
+  "ignorePatterns": [
+    "**/svg/*",
+    "**/wordings.js",
+    "mocks/*"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/*.spec.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
