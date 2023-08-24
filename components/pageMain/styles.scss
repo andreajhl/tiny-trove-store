@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/breakpoints';
+
+.page-main {
+  width: 100%;
+  @include display-flex(center);
+  flex-direction: column;
+
+  &-carousel {
+    width: 100%;
+  }
+
+  &-content {
+    margin-top: 20px;
+    width: 100%;
+    @include display-flex(center, baseline);
+
+    &__card {
+      text-align: center;
+      width: 25%;
+
+      &-title {
+        @include text(1rem, bold, normal, $brand-main);
+      }
+
+      &-subtitle {
+        @include text(1rem, 200, normal, $color-subtitle);
+      }
+    }
+  }
+
+  @include tablet {
+    &-content__card {
+      &-title {
+        @include text(2rem, bold, normal, $brand-main);
+
+      }
+
+      &-subtitle {
+        @include text(2rem, 200, normal, $color-subtitle);
+      }
+    }
+  }
+
+  @include desktop {
+    &-carousel {
+      img {
+        height: 600px;
+      }
+    }
+  }
+}

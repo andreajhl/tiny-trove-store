@@ -5,8 +5,11 @@
   height: 100%;
   text-align: center;
   text-transform: lowercase;
+  padding: 2rem;
   @include display-flex(space-between, space-between);
   flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 $color-shadow;
 
   &__btn-cart {
     width: 100%;
@@ -17,8 +20,11 @@
     text-transform: uppercase;
     color: $white;
     font-weight: 400;
-  }
 
+    &:active {
+      background: $brand-main-active;
+    }
+  }
 
   &__content {
     font-size: 14px;
