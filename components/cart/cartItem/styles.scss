@@ -5,6 +5,7 @@
   @include display-flex(center, flex-start);
   padding: 1.5rem;
   color: $color-subtitle;
+  @include border(bottom, rgba(0, 0, 0, 0.1) );
 
   &__main {
     @include display-flex(center);

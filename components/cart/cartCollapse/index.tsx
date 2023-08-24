@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { CartContext } from '@/context/cart';
 import { FiShoppingCart } from 'react-icons/fi';
 import CartItem from '../cartItem';
@@ -10,28 +10,38 @@ const CartCollapse = () => {
   const { cart } = useContext(CartContext);
   const { navbar, cart: { discount, total, subtotal, finishOrder } } = wordings;
 
-  const calculateOriginalPrice = Object.values(cart).reduce((acc, current) => (
+  const itemsCart = useMemo(() => Object.values(cart), [cart]);
+
+  const calculateOriginalPrice = itemsCart.reduce((acc, current) => (
     acc + ((current.originalPrice || current.price) * current.quantity)
   ), 0);
 
-  const calculateTotalPrice = Object.values(cart).reduce((acc, current) => (
+  const calculateTotalPrice = itemsCart.reduce((acc, current) => (
     acc + (current.price * current.quantity)
   ), 0);
 
   const calculateDiscountTotal = calculateOriginalPrice - calculateTotalPrice;
   const hasDiscount = calculateDiscountTotal > 0;
 
+  const totalItems = itemsCart.reduce((acc, current) => acc + current.quantity, 0);
+
   return (
     <>
       <button
-        className="btn fs-4"
+        className="btn fs-4 cart-button"
         data-testid="btn-cart-collapse" 
         aria-expanded="false"
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse"
       >
-        <FiShoppingCart />
+        <span className='cart-button__title'>Mi Carrito</span>
+        <p className='cart-button__icon'>
+          <FiShoppingCart />
+          <span className="cart-button__icon--badge">
+            {totalItems}
+          </span>
+        </p>
       </button>
       <div
         id="navbarCollapse"

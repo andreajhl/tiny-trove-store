@@ -1,5 +1,6 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+@import '../../../styles/breakpoints';
 
 #navbarCollapse {
   height: 100vh;
@@ -27,7 +28,7 @@
       padding: 1.5rem;
 
       &-title {
-        color: $color-title;
+        color: $brand-main;
         text-align: center;
         padding: 0;
         margin: 0;
@@ -56,7 +57,44 @@
         border-radius: 3px;
         padding: 10px 0;
         @include text(20px, light, normal, $white);
+
+        &:active {
+          background: $brand-main-active !important;
+        }
       }
+    }
+  }
+}
+
+.cart-button {
+  width: 100%;
+  padding: 20px 10px;
+  font-weight: 600;
+  border: none !important;
+  @include display-flex(space-between);
+
+  &__icon {
+    position: relative;
+
+    &--badge {
+      background: $white;
+      @include text(12px, normal, normal, $brand-main);
+      border-radius: 100%;
+      top: -10px;
+      left: 60%;
+      padding: 5px 8px;
+      position: absolute;
+      box-shadow: 0 8px 16px 0 $color-shadow;
+    }
+  }
+
+  &:hover {
+    color: $brand-main-active !important;
+  }
+  
+  @include tablet {
+    &__title {
+      display: none;
     }
   }
 }
