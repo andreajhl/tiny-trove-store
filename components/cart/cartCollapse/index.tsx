@@ -80,7 +80,7 @@ const CartCollapse = () => {
             }
             <div className="cart__footer-price">
               <p>{total}</p>
-              <p data-testid="cart__footer-price">${showWithPoints(calculateTotalPrice)}</p>
+              <p data-testid="final-price">${showWithPoints(calculateTotalPrice)}</p>
             </div>
             <button className="cart__footer-btn">{finishOrder}</button>
           </div>

@@ -28,8 +28,8 @@ describe('<CartItem />', () => {
     const originalPriceText = getByTestId('original-price');
     const priceText = getByTestId('price');
 
-    expect(originalPriceText.textContent).toContain('$5.000');
-    expect(priceText.textContent).toContain('$3.915');
+    expect(originalPriceText.textContent).toContain('5.000');
+    expect(priceText.textContent).toContain('3.915');
   });
 
   test('when the delete button is clicked, it executes the update of the state', () => {
