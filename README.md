@@ -1,35 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Tiny Trove Store
 
-First, run the development server:
+  Esta aplicación está desarrollada utilizando Next.js y TypeScript. Utiliza la API pública de Mercado Libre para obtener productos. En la página de inicio, encontrarás un banner con las categorías disponibles y un buscador. Puedes agregar productos al carrito de compras desde la lista de productos o desde la pantalla de detalles del artículo. El carrito se almacena en el almacenamiento local (localStorage), lo que significa que no perderás los datos al recargar la página o cerrar la sesión.
+ 
+<br>
+
+### Wed
+<hr>
+
+- **Prueba tú mismo:** [https://tiny-trove-store.netlify.app/](https://tiny-trove-store.netlify.app/)
+<br>
+<br>
+
+<br>
+
+### Clonar Repositorio
+<hr>
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  $ git clone https://github.com/andreajhl/tiny-trove-store.git
 ```
+<br>
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Cómo Probar
+<hr>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Después de clonar el repositorio, accede a la carpeta del proyecto desde tu editor de código favorito.
+* En la terminal del proyecto, ejecuta el siguiente comando para instalar las dependencias: ```npm install```.
+* Una vez finalizada la instalación, inicia el proyecto con el siguiente comando: ```npm run dev```.
+* Si deseas ejecutar las pruebas, utiliza: ```npm run test```
+<br>
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Tecnologías Utilizadas
+<hr>
 
-## Learn More
+* #### Next.js
+* #### TypeScript
+* #### SASS
+* #### Jest
+* #### Bootstrap
+<br>
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+### Pantallas del Proyecto y Usos
+<hr>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* ### Home
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  La página de inicio cuenta con un carrusel de bienvenida, información sobre cuotas y garantía, un banner de categorías para seleccionar y un buscador para traer productos relacionados.
+<br>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img src="public/images/readme/home.png" width="800" height="400" />
+<br>
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# tiny-trove-store
+
+* ### Listado de Productos
+<br>
+
+  Ya sea que selecciones una categoría o busques un producto desde el formulario, llegarás a esta página donde encontrarás un listado de productos encontrados (hasta 10 productos por página). Desde aquí, puedes agregar productos al carrito o ir a los detalles del producto haciendo clic sobre el título.
+<br>
+
+<img src="public/images/readme/product-list.png" width="800" height="400" />
+<br>
+<br>
+
+* ### Detalles del Producto
+<br>
+
+  En esta pantalla podrás ver más fotos del producto, el porcentaje de descuento (si aplica) y el precio original. También puedes agregar el producto al carrito.
+<br>
+
+<img src="public/images/readme/product-detail.png" width="800" height="400" />
+<br>
+<br>
+
+* ### Carrito de Compras
+<br>
+
+  El carrito de compras está disponible en toda la aplicación. Basta con tocar el icono del carrito para expandirlo. Aquí podrás ver el precio total, el descuento total (si aplica) y un resumen de todos los artículos agregados.
+<br>
+
+<img src="public/images/readme/cart.png" width="800" height="400" />
+<br>
+<br>
+
+* ### Página 404
+<br>
+
+  Si intentas acceder a una página que no existe, serás redirigido aquí. No te preocupes, puedes volver a la página de inicio desde el logotipo ubicado en la esquina superior izquierda.
+<br>
+
+<img src="public/images/readme/page-error.png" width="800" height="400" />
+<br>
+<br>
