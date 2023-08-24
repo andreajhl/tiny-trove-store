@@ -1,3 +1,4 @@
 export interface PaginationProps {
-  totalPage: number;
+  visiblePages: number;
+  customRedirect: (offset: number) => Record<string, any>;
 }

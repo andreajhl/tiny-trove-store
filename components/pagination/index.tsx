@@ -7,26 +7,26 @@ import { MAX_ITEMS_PAGINATION } from "@/constants/pagination";
 import { PaginationProps } from "@/interfaces/components/pagination";
 import './styles.scss';
 
-const Pagination = ({ totalPage }: PaginationProps) => {
+const Pagination = ({ visiblePages, customRedirect }: PaginationProps) => {
   const router = useRouter();
-  const { category, offset: offsetInitial } = router.query;
+  const { offset: offsetInitial } = router.query;
 
   const [currentPage, setCurrentPage] = useState(calculateInitialPage(offsetInitial as string));
-  const [visiblePages, setVisiblePages] = useState<number[]>([]);
+  const [visibleItemPages, setvVisibleItemPages] = useState<number[]>([]);
   const [firstRender, setFirstRender] = useState(true);
 
   const updateVisiblePages = (page: number) => {
-    if (page >= totalPage) return;
+    if (page >= visiblePages) return;
 
-    const allPages = Array.from({ length: totalPage }, (_, index) => index);
-    setVisiblePages(allPages.slice(page, page + MAX_ITEMS_PAGINATION));
+    const allPages = Array.from({ length: visiblePages }, (_, index) => index);
+    setvVisibleItemPages(allPages.slice(page, page + MAX_ITEMS_PAGINATION));
   }
 
   const goToNextPage = () => {
     const nextPage = currentPage + 1;
-    const lastPage = visiblePages[visiblePages.length - 1];
+    const lastPage = visibleItemPages[visibleItemPages.length - 1];
 
-    if (nextPage > totalPage) return;
+    if (nextPage > visiblePages) return;
     if (nextPage > lastPage) updateVisiblePages(nextPage);
     setCurrentPage(nextPage);
   };
@@ -34,7 +34,7 @@ const Pagination = ({ totalPage }: PaginationProps) => {
   const goToPreviousPage = () => {
     const cutPoint = currentPage - MAX_ITEMS_PAGINATION;
     const previousPage = currentPage - 1;
-    const firstPage = visiblePages[0];
+    const firstPage = visibleItemPages[0];
 
     if (previousPage < 0) return;
     if (previousPage < firstPage ) updateVisiblePages(cutPoint >= 0 ? cutPoint : 0);
@@ -43,18 +43,18 @@ const Pagination = ({ totalPage }: PaginationProps) => {
 
   useEffect(() => {
     updateVisiblePages(currentPage)
-  }, [totalPage]);
+  }, [visiblePages]);
 
   useEffect(() => {
     if(firstRender) return setFirstRender(false);
 
     const offset = currentPage * LIMIT_ITEMS;
 
-    router.push({ pathname: `${category}`, query: { offset } })
+    router.push(customRedirect(offset))
   }, [currentPage]);
   
   const ifFirstPage = useMemo(() => !currentPage, [currentPage]);
-  const lastPage = useMemo(() => currentPage + 1 >= totalPage, [currentPage])
+  const lastPage = useMemo(() => currentPage + 1 >= visiblePages, [currentPage])
 
   return (
     <div aria-label="Page navigation w-100">
@@ -67,7 +67,7 @@ const Pagination = ({ totalPage }: PaginationProps) => {
           <span aria-hidden="true">&laquo;</span>
         </li>
         {
-          visiblePages.map((pageNumber) => (
+          visibleItemPages.map((pageNumber) => (
             <li
               key={pageNumber}
               onClick={() => setCurrentPage(pageNumber)}

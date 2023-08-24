@@ -17,7 +17,7 @@ describe('API Client', () => {
       const result = await getProductByCategory('0', 'someCategory');
 
       expect(result.productList).toEqual(expect.arrayContaining(PRODUCT_LIST_NORMALIZE));
-      expect(result.total).toBe(2);
+      expect(result.totalItems).toBe(2);
     });
 
     test('throws an error when the API request fails', async () => {
@@ -42,7 +42,7 @@ describe('API Client', () => {
       const result = await getProductSearch('0', 'bebe');
   
       expect(result.productList).toEqual(expect.arrayContaining(PRODUCT_LIST_NORMALIZE));
-      expect(result.total).toBe(2);
+      expect(result.totalItems).toBe(2);
     });
 
     test('throws an error when the API request fails', async () => {

@@ -15,7 +15,14 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-const renderPagination = (total: number) =>render(<Pagination totalPage={total} />);
+const renderPagination = (total: number) => (
+  render(
+    <Pagination
+      visiblePages={total}
+      customRedirect={jest.fn()}
+    />
+  )
+);
 
 describe('<Pagination />', () => {
   test('renders pagination correctly', () => {

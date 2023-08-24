@@ -19,8 +19,9 @@ const renderProductList = (total: number, productList: ProductItem[]) =>(
   render(
     <CartProvider value={MOCK_CART_CONTEXT}>
       <ProductList
+        customRedirect={jest.fn()}
         productList={productList}
-        total={total}
+        totalItems={total}
       />
     </CartProvider>
   )

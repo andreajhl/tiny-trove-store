@@ -28,7 +28,7 @@ export const getProductByCategory = async (offset: string, category: string) => 
   
     return {
       productList: normalizeProductList(data.results),
-      total: data.paging.total
+      totalItems: data.paging.total
     };
   } catch (error) {
     throw error;
@@ -46,7 +46,7 @@ export const getProductSearch = async (offset: string, search: string) => {
 
     return {
       productList: normalizeProductList(data.results),
-      total: data.paging.total
+      totalItems: data.paging.total
     };
   } catch (error) {
     throw error;
