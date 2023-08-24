@@ -11,6 +11,7 @@ module.exports = {
     '!<rootDir>/coverage/**',
   ],
   moduleNameMapper: {
+    '^.*\\.scss$': '<rootDir>/mocks/styles.ts',
     '^@/(.*)$': '<rootDir>/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
