@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { CartProvider } from '@/context/cart';
 import ProductCard from '.';
 import { PRODUCT_ITEM_NORMALIZE } from '@/mocks/client/produc';

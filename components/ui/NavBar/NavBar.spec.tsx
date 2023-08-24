@@ -3,11 +3,6 @@ import { useRouter } from 'next/router';
 import NavBar from '.';
 import { CartProvider } from '@/context/cart';
 
-const mockRouter = {
-  query: {},
-  push: jest.fn(),
-};
-
 jest.mock('next/router', () => ({
   useRouter: jest.fn()
 }));

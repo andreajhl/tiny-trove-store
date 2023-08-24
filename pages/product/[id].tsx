@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage, } from 'next';
+import type { GetServerSideProps } from 'next';
 import ShopLayout from '@/components/layouts/ShopLayout';
 import ProductDatil from '@/components/products/productDetail';
 import { getProductByID } from '@/client/product';

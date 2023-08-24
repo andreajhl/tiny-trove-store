@@ -1,7 +1,6 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/router';
 import Search from '.';
-import wordings from '@/wordings';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn()
