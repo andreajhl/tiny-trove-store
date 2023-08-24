@@ -73,7 +73,12 @@
   border: none !important;
   @include display-flex(space-between);
 
+  &__title {
+    color: $brand-main
+  }
+
   &__icon {
+    color: $brand-main;
     position: relative;
 
     &--badge {
