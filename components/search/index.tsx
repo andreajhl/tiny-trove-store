@@ -20,7 +20,9 @@ const Search = () => {
         pathname: '/search',
         query: { q: search, offset: 0 },
       });
-    }
+
+      setSearch('');
+    };
   };
 
   const debouncedRedirect = useDebounce(handleRedirect, INTERVAL_TIME);
@@ -42,18 +44,16 @@ const Search = () => {
   return (
     <div className="search">
       <form
-        role="search"
         onSubmit={handleSubmit}
-        className="search-form-control form-control"
+        className="search__form-control"
       >
         <input
-          type="search"
           onChange={handleChange}
           aria-label={placeholder}
           placeholder={placeholder}
-          className="border border-0 w-75"
+          className="search__form-control-input"
         />
-        <button className="btn" type="submit">
+        <button className="search__form-control-btn" type="submit">
           <PiMagnifyingGlassBold />
         </button>
       </form>

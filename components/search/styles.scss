@@ -1,15 +1,42 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+@import '../../styles/breakpoints';
 
 .search {
-  width: 70%;
-  max-width: 600px;
+  background: white;
+  @include border(all, $color-shadow);
+  border-radius: 10px;
+  padding: 5px 0;
 
-  &-form-control {
+  &__form-control {
     @include display-flex(space-around);
+
+    &-btn,
+    &-input {
+      @include border(all, none);
+      background: none;
+    }
     
-    .btn {
+    &-btn {
       color: $brand-main;
     }
+
+    &-input {
+      width: 80%;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible {
+        @include border(all, none);
+        background: none;
+        outline: none;
+      }
+    }
+  }
+
+  @include tablet {
+    width: 70%;
+    max-width: 600px;
   }
 }
