@@ -10,7 +10,6 @@
 
 - **Prueba tú mismo:** [https://tiny-trove-store.netlify.app/](https://tiny-trove-store.netlify.app/)
 <br>
-<br>
 
 <br>
 
