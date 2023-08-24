@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     return { props: { productList, totalItems } };
   } catch (error) {
     console.error('Error fetching data:', error);
-    return { redirect: { destination: '/', permanent: true } };
+    return { redirect: { destination: '/404', permanent: true } };
   };
 };
 

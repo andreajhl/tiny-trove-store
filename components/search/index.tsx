@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { PiMagnifyingGlassBold } from 'react-icons/pi';
 import { normalizeText } from '@/utils/strings';
 import wordings from '@/wordings';
@@ -28,13 +28,16 @@ const Search = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const normalizedText = normalizeText(event.target.value);
     setSearch(normalizedText);
-    debouncedRedirect();
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleRedirect();
   };
+
+  useEffect(() => {
+    if(search.length) debouncedRedirect();
+  }, [search]);
 
   return (
     <div className="search">
