@@ -34,7 +34,7 @@ describe('<Search />', () => {
   test('should update search state on input change', () => {
     const { getByRole } = renderSearch();
 
-    const input = getByRole('searchbox') as HTMLInputElement;
+    const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: 'test' } });
 
     expect(input.value).toBe('test');
@@ -46,7 +46,7 @@ describe('<Search />', () => {
 
     const { getByRole } = renderSearch();
 
-    const input = getByRole('searchbox') as HTMLInputElement;
+    const input = getByRole('textbox') as HTMLInputElement;
   
     fireEvent.change(input, { target: { value: 'test' } });
     fireEvent.change(input, { target: { value: 'testing' } });
@@ -62,7 +62,7 @@ describe('<Search />', () => {
   test('should redirect on form submission', async () => {
     const { getByRole } = renderSearch();
 
-    const input = getByRole('searchbox') as HTMLInputElement;
+    const input = getByRole('textbox') as HTMLInputElement;
     const submitButton = getByRole('button');
 
     fireEvent.change(input, { target: { value: 'test' } });
